@@ -18,6 +18,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '4_*n!n0%!&(5ebo1js35gv_o!0p(5bq48&1%vpd2fp&4z59zl$'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,'plantillas'),
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,10 +28,10 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#encoding:utf-8
 
 # Application definition
-
+ADMINS = (('Proyecto en tics', 'ptics@gmail.com'),)
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -36,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'principal',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,7 +69,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-PE'
 
 TIME_ZONE = 'UTC'
 
