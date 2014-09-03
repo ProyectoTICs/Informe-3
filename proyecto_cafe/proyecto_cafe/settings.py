@@ -18,9 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '4_*n!n0%!&(5ebo1js35gv_o!0p(5bq48&1%vpd2fp&4z59zl$'
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'plantillas'),
-)
+TEMPLATE_DIRS = (BASE_DIR,'plantillas')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,9 +67,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'es-PE'
+LANGUAGE_CODE = 'es-CL'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -84,3 +82,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+

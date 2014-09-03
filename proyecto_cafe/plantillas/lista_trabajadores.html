@@ -1,0 +1,17 @@
+   <!DOCTYPE html>
+   <html lang=’es’>
+    <head>
+    <title>Lista de bebidas de ejemplo</title>
+    <meta charset=’utf-8’>
+    </head>
+     <body>
+     	<h1>Lista trabajadores</h1>
+    {% for dato in lista %}
+    <ul>
+    <li><strong>{{dato.Nombre}}</strong></li>
+    <li>{{dato.Apellido}}</li>
+    <li>{{dato.Direccion}}</li>
+    </ul>
+    {% endfor %}
+    </body>
+</html>
