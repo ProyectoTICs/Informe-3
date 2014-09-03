@@ -331,7 +331,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Diseño de Software}
+\title{Construcción y Pruebas}
 %
 
 \author{Daniel Méndez - Felipe Rios - Carlos Martínez - Luis Cáceres
@@ -373,35 +373,24 @@ En este informe se indican los detalles necesarios para poder avanzar en el desa
 
 \section{Introducción}
 
-Al momento de comenzar el proceso de diseño hemos considerado los requerimientos del usuario, hemos caracterizado las principales entidades participantes en el software, el usuario (persona ejecutante del programa), los trabajadores y la compra de café.
-Para hacer más comprensivo aún el trabajo a realizar, se implementarán diagramas de flujo y  casos de uso, 
-con los cuales estandarizaremos el diseño a implementar más adelante, logrando comunicar de forma clara como se empleará el programa y los modulos necesarios a desarrollar.
-Ambos diagramas son exluyentes entre sí y tienen distintos enfoques, pero ambos buscan mostrar y definir el software que hemos diseñado.
+
 
 
 \section{Marco Teorico}
 
-Para la realización del diseño, se tomó la decisión de usar diagramas de flujo. Un diagrama de flujo es una representación gráfica de un proceso, cada paso del proceso es representado por un símbolo diferente que  contiene una breve descripción de la etapa. Los símbolos gráficos del proceso están unidos entre sí mediante flechas que indican la dirección del flujo. Estos simbolos estan estandarizados según la norma ISO 5807, que establece el significado de cada figura.
+Django es un framework de desarrollo web, de código abierto, escrito en lenguaje Python, de alto nivel que fomenta el desarrollo rápido y el diseño limpio y pragmático. Este framework respeta el paradigma conocido como Modelo - Vista - Controlador (MVC), el cual es un patrón de arquitectura de software que separa los datos y la lógica de negocio de una aplicación de la interfaz de usuario y el módulo encargado de gestionar los eventos y las comunicaciones.
 
-Además, se utilizaron diagramas de casos de uso, los cuales constan de actores y relaciones a las diferentes opciones que tiene un usuario dentro del software, usando dibujos que describen brevemente el uso del algoritmo. Para esto se usó lenguaje unificado modelado, o UML, por sus siglas en inglés, \emph{Unified Modeling Language}, que es el lenguaje gráfico más conocido y utilizado en la actualidad para visualizar, especificar, construir y documentar un sistema.
+Django fué desarrollado para una operación de noticias en línea de rápido movimiento. Fué diseñado para manejar dos desafíos: los plazos intensivos de una sala de redacción y los estrictos requisitos de los desarrolladores web con experiencia que lo escribieron. Éste permite construir aplicaciones web de alto rendimiento y elegantes, de manera rápida.
 
-\section{Análisis y Diseño de Solución}
+
+\section{::NOT:: Desarrollo}
 
 \subsection{Requerimientos faltantes}
-A partir del informe entregado, nos dispusimos a realizar el diseño, pero topamos al llegar a los requerimientos no funcionales, los cuales nos estaban especificados, por lo que basados en experiencias anteriores en el desarrollo de proyectos como este, definimos unos nuevos. Éstos son: 
-\begin{itemize}
-\item La información debe mostrarse en la terminal de cada usuario.
-
-\item Cada usuario debe tener acceso a indicar quienes faltan.
-
-\item Cada usuario debe tener acceso a ingresar el valor del café.
-
-\item Cada usuario puede agregar o eliminar a otros del sistema.
-\end{itemize}
 
 
 
-\subsection{Diagrama de casos de uso}
+
+\subsection{una subsection de algo}
 El usuario tiene como objetivo principal, realizar la consulta de quien es el compañero de trabajo seleccionado para comprar café, este es el primer caso de uso, y se relaciona directamente con registar una ausencia, dado que es necesario saber quienes están disponibles para realizar la compra. El programa responde mostrando el usuario que debe ir a comprar café, utilizando un algoritmo que se explica más adelante. 
 También el usuario puede tener acceso al registro de gasto de todos los trabajadores. Si bien este caso no es funcional, permite supervisar la plataforma y asegurar su correcto funcionamiento.
 Por último, los usuarios pueden eliminar o agregar trabajadores del sistema e ingresar el precio del café que están comprando, tal como aparece en la figura \ref{fig:sim}.
