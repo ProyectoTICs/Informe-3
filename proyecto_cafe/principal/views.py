@@ -5,7 +5,7 @@ from principal.models import Trabajador, Cafe
 from django.http import HttpResponse, HttpResponseRedirect
 def lista_trabajadores(request):
 	trabajador = Trabajador.objects.all()
-	return render_to_response('lista_trabajadores.html',{'lista':trabajador})
+	return render_to_response('inicio.html',{'lista':trabajador})
 
 def lista_cafe(request):
 	cafe = Cafe.objects.all()
