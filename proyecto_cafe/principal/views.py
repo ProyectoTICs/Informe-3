@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response , get_object_or_404
 from django.contrib.auth.models import User
 from principal.models import Trabajador, Cafe   
 from django.http import HttpResponse, HttpResponseRedirect
+from django.template import RequestContext
 from principal.forms import TrabajadorForm
 def lista_trabajadores(request):
 	trabajador = Trabajador.objects.all()
