@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset = 'utf-8'>
+<title>Sistema de distribución de gastos de café- {% block titulo %}{% endblock %}</title>
+<style>
+{% block style_css %}{% endblock %}
+</style>
+</head>
+<body>
+<header>
+	{% block encabezado %}{% endblock %}
+	<nav>
+		<ul>
+		<li><a href="/">Inicio</a></li>
+		<li><a href="/agregar">Agregar Trabajador</a></li>
+		<li><a href="/eliminar">Eliminar Trabajador</a></li>
+		<li><a href="/consulta">Realizar consulta</a></li>
+		<li><a href="/registros">ver registro de gastos</a></li>
+		</ul>
+	</nav>
+	<hr>
+</header>
+<section class ='contenido'>
+{% block contenido %}{% endblock %}
+</section>
+<footer>
+</footer>
+</body>
+</html>

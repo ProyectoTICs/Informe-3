@@ -1,17 +1,30 @@
-   <!DOCTYPE html>
-   <html lang=’es’>
-    <head>
-    <title>Lista de bebidas de ejemplo</title>
-    <meta charset=’utf-8’>
-    </head>
-     <body>
-     	<h1>Lista trabajadores</h1>
-    {% for dato in lista %}
-    <ul>
-    <li><strong>{{dato.Nombre}}</strong></li>
-    <li>{{dato.Apellido}}</li>
-    <li>{{dato.Direccion}}</li>
-    </ul>
-    {% endfor %}
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% comment %} Aqui van  comentarios {% endcomment %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block style %}
+   .impar{ background-color:#90EE90; }
+   .par{ background-color:#5ACC%A; }
+{% endblock %}
+
+{% block encabezado %}
+ <h1>Sistema de compra de Café</h1>
+ {% endblock %}
+
+ {% block contenido %}
+<p>
+Actualmente tenemos registrados:
+{% with total=lista.count %}
+{{total}} trabajadore{{total|pluralize}}
+{% endwith %}
+</p>
+<ul>
+{% for dato in lista %}
+<li>{{dato.Nombre}} {{dato.Apellido}}</li>
+{% empty %}
+<li>No hay trabajadores registrados aun</li>
+{% endfor %}
+</ul>
+{% endblock %}
