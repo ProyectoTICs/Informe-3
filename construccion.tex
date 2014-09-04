@@ -4,6 +4,12 @@
 \decimalpoint% changes the coma in the numbers to period
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if usin
 \usepackage{csquotes}
 
 
@@ -20,13 +26,7 @@
 % cite.sty was written by Donald Arseneau
 % V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
 % \cite{} output to follow that of IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% result in citation numbers being automag hyperref.sty. cite.sty does
 % not currently provide for hyperlinked citations.
 % The latest version can be obtained at:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
@@ -366,14 +366,13 @@
 % make the title area
 \maketitle
 
-
 \begin{abstract}
-En este informe se indican los detalles necesarios para poder avanzar en el desarrollo del proyecto, mostrando con diagramas y especificaciones escritas, el diseño que consideramos adecuado para resolver el problema planteado. Para este cometido se toma en cuenta el levantado de requerimientos que hicieron nuestros compañeros de trabajo cuando conversaron con el cliente.
+En este informe, se indican los detalles pertinentes al desarrollo del proyecto, mostrando el avance de la aplicacion para determinar el gasto equitativo en la compra de cafe de una empresa.
 \end{abstract}
 
 \section{Introducción}
 
-El presente informe dará un claro detalle sobre el desarrollo de la aplicación solicitada por el cliente. El programa se encargará de repartir equitativamente el gasto de café en una empresa. Para esto se levantaron los requerimientos de manera que la aplicación sea diastribuida, vale decir, la aplicación se ejecutará en diversos ordenadores a la vez y cada uno de estos desplegará la consulta. Para solucionar este problema, el algoritmo se desarrolló vía web mediante el uso de Django. 
+El presente informe dará detalles sobre el avance en el desarrollo de la aplicación. En la primera entrega, se verá el reflejo del diseño en la aplicacion que determinará el gasto equitativo en la compra de café de una pequeña empresa la cual, creada via web mediante el uso de Django, cumplira con los requerimientos solicitados por el cliente.
 
 
 \section{Marco Teórico}
@@ -385,8 +384,22 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
 
 \section{Cuerpo}
 
+En la etapa de diseño, se especifico que uno de los requerimientos era poseer una interfaz que permitiera al usuario hacer la consulta desde cualquier ordenador que corriera la aplicacion. Podemos ver el menú (Figura 1.) que, debido a que aún está en desarrollo, la selección de botones no es del todo amigable con el usuario y aún no selecciona al trabajador para la compra, pero si permite agregar nuevas personas como trabajadores dentro de el sistema.
 
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+Si seleccionamos la opcion Agregar Trabajador, se despliega una pestaña que nos permite registrar nuevo personal (Figura 2.). Ingresamos una nueva persona al sistema simplemente colocando sus datos y confirmando (Figura 3.).
+
+Si el trabajador es agregado, se despliega el mensaje "El usuario ha sido agregado exitosamente" junto con una lista de los usuarios agregados previamente (Figura 4. y Figura 5.)
+
+Si bien el algoritmo aún no esta integrado, la aplicación ya esta conectada a la base de datos y ésta permite ver, desde la pantalla de inicio (Figura 6.), la lista de trabajadores a considerar en la compra de café
+
+\section{Conclusión}
+
+Para terminar, en la primera entrega de la aplicación, se logró crealizar el sistema encargado de agregar personal a la base de datos y general parte de la visual de la aplicacion mediante el uso del framework Django. Si bien, aún no se logra amenizar la aplicación, ésta sigue en etapa de desarrollo, por lo que se espera generar una interfaz amigable para la siguiente entrega junto a la incorporacion del algoritmo y el sistema encargado de ver quien no debe ser contado en la selección para la compra.
+
+\section{Apéndice}
+
+
+\begin{figure}[ht!]% prefiera la posición arriba (t) para las figuras
   \centering
   % incluya las figuras utilizando el comando de abajo
   % note que la extensión es asumida pro latex,
@@ -401,10 +414,7 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
   \label{fig:sim}
 \end{figure}
 
-
-
-
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+\begin{figure}[ht!]% prefiera la posición arriba (t) para las figuras
   \centering
   % incluya las figuras utilizando el comando de abajo
   % note que la extensión es asumida pro latex,
@@ -419,9 +429,7 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
   \label{fig:sim}
 \end{figure}
 
-
-
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+\begin{figure}[ht!]% prefiera la posición arriba (t) para las figuras
   \centering
   % incluya las figuras utilizando el comando de abajo
   % note que la extensión es asumida pro latex,
@@ -436,9 +444,7 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
   \label{fig:sim}
 \end{figure}
 
-
-
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+\begin{figure}[ht!]% prefiera la posición arriba (t) para las figuras
   \centering
   % incluya las figuras utilizando el comando de abajo
   % note que la extensión es asumida pro latex,
@@ -453,9 +459,7 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
   \label{fig:sim}
 \end{figure}
 
-
-
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+\begin{figure}[ht!]% prefiera la posición arriba (t) para las figuras
   \centering
   % incluya las figuras utilizando el comando de abajo
   % note que la extensión es asumida pro latex,
@@ -471,7 +475,7 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
 \end{figure}
 
 
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
+\begin{figure}[ht!]% prefiera la posición arriba (t) para las figuras
   \centering
   % incluya las figuras utilizando el comando de abajo
   % note que la extensión es asumida pro latex,
@@ -487,11 +491,6 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
 \end{figure}
 
 
-
-
-\section{Conclusión}
-
-Para terminar, en la primera entrega de la aplicación, se logró cubrir cada uno de los requerimientos funcionales dados por el cliente y requerimientos no funcionales agregados en la etapa de diseño como la necesidad de un usuario y contraseña. Si bien visualmente, aún no se logra amenizar la aplicación, está en etapa de desarrollo por lo que se espera generar una visual amigable para la siguiente entrega.
 
 % Referencias
 
