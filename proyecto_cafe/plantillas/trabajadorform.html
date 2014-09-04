@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
+{% block titulo %} Agregar {%endblock%}
+{% block style_css %}
+#id_GastoAcumulado{
+	display: none;
+}
+.id_GastoAcumulado{
+	display: none;
+}
+{% endblock %}
+{% block encabezado %}
+Agregar Trabajador
+ {% endblock %}
 {% block contenido %}
-<form id='formulario' method='post' action=''>{% csrf_token %}
-      {{formulario.as_p}}
-      <p><input type='submit' value='confirmar'/></p>		
+<form id='formulario' method='post' action=''>
+	{% csrf_token %}
+    {{formulario.as_p}}
+    <p><input type='submit' value='Confirmar'/></p>		
 </form>
 {% endblock %}

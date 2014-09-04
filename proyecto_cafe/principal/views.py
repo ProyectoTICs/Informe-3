@@ -18,8 +18,12 @@ def nuevo_trabajador(request):
 		formulario = TrabajadorForm(request.POST)
 		if formulario.is_valid():
 			formulario.save()
-			return HttpResponseRedirect('/agregar')
+			return HttpResponseRedirect('/agregado')
 	else:
 		formulario = TrabajadorForm()
 
 	return render_to_response('trabajadorform.html',{'formulario':formulario},context_instance=RequestContext(request))
+
+def agregado(request):
+	trabajador = Trabajador.objects.all()
+	return render_to_response('agregado.html',{'lista':trabajador})

@@ -2,26 +2,62 @@
 <html lang='es'>
 <head>
 <meta charset = 'utf-8'>
-<title>Sistema de distribución de gastos de café- {% block titulo %}{% endblock %}</title>
+<title>Cafematic - {% block titulo %}{% endblock %}</title>
 <style>
+nav {
+	height: 40px;
+}
+.nave{
+	list-style: none;
+
+}
+.nave li{
+	float: left;
+	padding: 3px;
+
+}
+
+.nave li a{
+	display: block;
+	width: 120px;
+	text-align: center;
+	border: solid;
+	height: 40px;
+	text-decoration: none;	
+	vertical-align: middle;
+}
+
+.prim
+{
+	display: block;
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	border: dotted;
+}
 {% block style_css %}{% endblock %}
 </style>
 </head>
 <body>
 <header>
-	{% block encabezado %}{% endblock %}
+	<h1>Sistema de distribución de gastos de café</h1>
+
 	<nav>
-		<ul>
+		<ul class="nave">
+		<li class="prim">{% block encabezado %}{% endblock %}</li>
 		<li><a href="/">Inicio</a></li>
+		<li><a href="/consulta">Consulta</a></li>
+		<li><a href="/registros">Historial</a></li>
 		<li><a href="/agregar">Agregar Trabajador</a></li>
 		<li><a href="/eliminar">Eliminar Trabajador</a></li>
-		<li><a href="/consulta">Realizar consulta</a></li>
-		<li><a href="/registros">ver registro de gastos</a></li>
 		</ul>
 	</nav>
-	<hr>
+	
 </header>
 <section class ='contenido'>
+<br>
+<hr>
+<br>
 {% block contenido %}{% endblock %}
 </section>
 <footer>

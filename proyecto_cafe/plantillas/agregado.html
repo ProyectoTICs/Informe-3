@@ -2,7 +2,7 @@
 
 {% comment %} Aqui van  comentarios {% endcomment %}
 
-{% block titulo %} Inicio {% endblock %}
+{% block titulo %} Exito {% endblock %}
 
 {% block style %}
    .impar{ background-color:#90EE90; }
@@ -10,10 +10,12 @@
 {% endblock %}
 
 {% block encabezado %}
- Inicio
+ Agregado exitoso
  {% endblock %}
 
  {% block contenido %}
+<br>
+<h3>El usuario ha sido gregado exitosamente</h3>
 <p>
 Actualmente tenemos registrados:
 {% with total=lista.count %}

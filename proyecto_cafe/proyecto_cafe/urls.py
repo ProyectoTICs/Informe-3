@@ -11,5 +11,7 @@ urlpatterns = patterns('',
     url(r'^agregar/$','principal.views.nuevo_trabajador'),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^eliminar/$','principal.views.eliminar_usuario'),
+    url(r'^agregado/$','principal.views.agregado'),
     
 )
