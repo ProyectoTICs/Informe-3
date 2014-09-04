@@ -331,7 +331,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Diseño de Software}
+\title{Construcción y Pruebas}
 %
 
 \author{Daniel Méndez - Felipe Rios - Carlos Martínez - Luis Cáceres
@@ -373,77 +373,23 @@ En este informe se indican los detalles necesarios para poder avanzar en el desa
 
 \section{Introducción}
 
-Al momento de comenzar el proceso de diseño hemos considerado los requerimientos del usuario, hemos caracterizado las principales entidades participantes en el software, el usuario (persona ejecutante del programa), los trabajadores y la compra de café.
-Para hacer más comprensivo aún el trabajo a realizar, se implementarán diagramas de flujo y  casos de uso, 
-con los cuales estandarizaremos el diseño a implementar más adelante, logrando comunicar de forma clara como se empleará el programa y los modulos necesarios a desarrollar.
-Ambos diagramas son exluyentes entre sí y tienen distintos enfoques, pero ambos buscan mostrar y definir el software que hemos diseñado.
+El presente informe dará un claro detalle sobre el desarrollo de la aplicación solicitada por el cliente. El programa se encargará de repartir equitativamente el gasto de café en una empresa. Para esto se levantaron los requerimientos de manera que la aplicación sea diastribuida, vale decir, la aplicación se ejecutará en diversos ordenadores a la vez y cada uno de estos desplegará la consulta. Para solucionar este problema, el algoritmo se desarrolló vía web mediante el uso de Django. 
 
 
-\section{Marco Teorico}
+\section{Marco Teórico}
 
-Para la realización del diseño, se tomó la decisión de usar diagramas de flujo. Un diagrama de flujo es una representación gráfica de un proceso, cada paso del proceso es representado por un símbolo diferente que  contiene una breve descripción de la etapa. Los símbolos gráficos del proceso están unidos entre sí mediante flechas que indican la dirección del flujo. Estos simbolos estan estandarizados según la norma ISO 5807, que establece el significado de cada figura.
+Django es un framework de desarrollo web, de código abierto, escrito en lenguaje Python, de alto nivel que fomenta el desarrollo rápido y el diseño limpio y pragmático. Este framework respeta el paradigma conocido como Modelo - Vista - Controlador (MVC), el cual es un patrón de arquitectura de software que separa los datos y la lógica de negocio de una aplicación de la interfaz de usuario y el módulo encargado de gestionar los eventos y las comunicaciones.
 
-Además, se utilizaron diagramas de casos de uso, los cuales constan de actores y relaciones a las diferentes opciones que tiene un usuario dentro del software, usando dibujos que describen brevemente el uso del algoritmo. Para esto se usó lenguaje unificado modelado, o UML, por sus siglas en inglés, \emph{Unified Modeling Language}, que es el lenguaje gráfico más conocido y utilizado en la actualidad para visualizar, especificar, construir y documentar un sistema.
-
-\section{Análisis y Diseño de Solución}
-
-\subsection{Requerimientos faltantes}
-A partir del informe entregado, nos dispusimos a realizar el diseño, pero topamos al llegar a los requerimientos no funcionales, los cuales nos estaban especificados, por lo que basados en experiencias anteriores en el desarrollo de proyectos como este, definimos unos nuevos. Éstos son: 
-\begin{itemize}
-\item La información debe mostrarse en la terminal de cada usuario.
-
-\item Cada usuario debe tener acceso a indicar quienes faltan.
-
-\item Cada usuario debe tener acceso a ingresar el valor del café.
-
-\item Cada usuario puede agregar o eliminar a otros del sistema.
-\end{itemize}
+Django fué desarrollado para una operación de noticias en línea de rápido movimiento. Fué diseñado para manejar dos desafíos: los plazos intensivos de una sala de redacción y los estrictos requisitos de los desarrolladores web con experiencia que lo escribieron. Éste permite construir aplicaciones web de alto rendimiento y elegantes, de manera rápida.
 
 
+\section{Cuerpo}
 
-\subsection{Diagrama de casos de uso}
-El usuario tiene como objetivo principal, realizar la consulta de quien es el compañero de trabajo seleccionado para comprar café, este es el primer caso de uso, y se relaciona directamente con registar una ausencia, dado que es necesario saber quienes están disponibles para realizar la compra. El programa responde mostrando el usuario que debe ir a comprar café, utilizando un algoritmo que se explica más adelante. 
-También el usuario puede tener acceso al registro de gasto de todos los trabajadores. Si bien este caso no es funcional, permite supervisar la plataforma y asegurar su correcto funcionamiento.
-Por último, los usuarios pueden eliminar o agregar trabajadores del sistema e ingresar el precio del café que están comprando, tal como aparece en la figura \ref{fig:sim}.
 
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
-  \centering
-  % incluya las figuras utilizando el comando de abajo
-  % note que la extensión es asumida pro latex,
-  % y que .pdf será asumido por pdflatex; o cualquier otra cosa
-  % declarada vía \DeclareGraphicsExtensions.
-  \includegraphics[width=0.8\linewidth]{CasosUso}
-  %\rule{0.8\linewidth}{2cm}
-  \caption{Diagrama de casos de uso.}
-  % genere las etiquetas para referencias a las figuras
-  % utilice identificadores que le ayuden a diferenciar figuras, tablas,
-  % y otras entidades (por ejemplo, fig:)
-  \label{fig:sim}
-\end{figure}
-
-\subsection{Diagrama de flujo}
-Tal como se especificaba en los requerimientos recibidos, y como podemos ver en la figura \ref{fig:sim2}, lo primero que hacemos es obetener los datos guardados en la base de datos y compararlos con las personas que están presentes, que son ingresadas por el usuario junto con el precio del café. Luego de esto, debemos calcular la diferencia de precio de los cafés tomados y los cafés comprados para cada uno de los usuarios y buscar el mayor de estos valores. En un principio este será nuestro elegido para ir a comprar y en caso de que este número se repita, se escoge uno de ellos al azar, siempre con las personas que están presentes. Para finalizar, se actualiza la base de datos y se muestra la eleción en pantalla.
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
-  \centering
-  % incluya las figuras utilizando el comando de abajo
-  % note que la extensión es asumida pro latex,
-  % y que .pdf será asumido por pdflatex; o cualquier otra cosa
-  % declarada vía \DeclareGraphicsExtensions.
-  \includegraphics[width=0.8\linewidth]{AlgoritmoSelector}
-  %\rule{0.8\linewidth}{2cm}
-  \caption{Diagrama de flujo algoritmo selector.}
-  % genere las etiquetas para referencias a las figuras
-  % utilice identificadores que le ayuden a diferenciar figuras, tablas,
-  % y otras entidades (por ejemplo, fig:)
-  \label{fig:sim2}
-\end{figure}
-\subsection{Discusión}
-El principal punto en el que nos vimos estancados, fue en la definición de los requerimientos no funcionales, dado que en el documento recibido no estaban claros. La definicion de nuevos requerimientos nos trajo otro problema, la utilización de diferentes roles, como un administrador y usuarios. El problema al asignarle tareas únicas al administrador, era que existe la posibilidad de que el usuario asignado para este cargo no asista, dejando a sus colegas sin poder escoger a un comprador. Finalmente, y como se vió reflejado en el informe, solo definimos un tipo de rol.
-Otro de los puntos importantes fue la abstracción que debimos tomar a la hora de realizar los diferentes diagramas y evitar encasillarnos en un lenguaje específico.
 
 \section{Conclusión}
 
-
+Para terminar, en la primera entrega de la aplicación, se logró cubrir cada uno de los requerimientos funcionales dados por el cliente y requerimientos no funcionales agregados en la etapa de diseño como la necesidad de un usuario y contraseña. Si bien visualmente, aún no se logra amenizar la aplicación, está en etapa de desarrollo por lo que se espera generar una visual amigable para la siguiente entrega.
 
 % Referencias
 
