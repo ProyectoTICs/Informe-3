@@ -373,7 +373,7 @@ En este informe se indican los detalles necesarios para poder avanzar en el desa
 
 \section{Introducción}
 
-
+El presente informe dará un claro detalle sobre el desarrollo de la aplicación solicitada por el cliente. El programa se encargará de repartir equitativamente el gasto de café en una empresa. Para esto se levantaron los requerimientos de manera que la aplicación sea diastribuida, vale decir, la aplicación se ejecutará en diversos ordenadores a la vez y cada uno de estos desplegará la consulta. Para solucionar este problema, el algoritmo se desarrolló vía web mediante el uso de Django. 
 
 
 \section{Marco Teorico}
@@ -385,52 +385,10 @@ Django fué desarrollado para una operación de noticias en línea de rápido mo
 
 \section{::NOT:: Desarrollo}
 
-\subsection{Requerimientos faltantes}
 
-
-
-
-\subsection{una subsection de algo}
-El usuario tiene como objetivo principal, realizar la consulta de quien es el compañero de trabajo seleccionado para comprar café, este es el primer caso de uso, y se relaciona directamente con registar una ausencia, dado que es necesario saber quienes están disponibles para realizar la compra. El programa responde mostrando el usuario que debe ir a comprar café, utilizando un algoritmo que se explica más adelante. 
-También el usuario puede tener acceso al registro de gasto de todos los trabajadores. Si bien este caso no es funcional, permite supervisar la plataforma y asegurar su correcto funcionamiento.
-Por último, los usuarios pueden eliminar o agregar trabajadores del sistema e ingresar el precio del café que están comprando, tal como aparece en la figura \ref{fig:sim}.
-
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
-  \centering
-  % incluya las figuras utilizando el comando de abajo
-  % note que la extensión es asumida pro latex,
-  % y que .pdf será asumido por pdflatex; o cualquier otra cosa
-  % declarada vía \DeclareGraphicsExtensions.
-  \includegraphics[width=0.8\linewidth]{CasosUso}
-  %\rule{0.8\linewidth}{2cm}
-  \caption{Diagrama de casos de uso.}
-  % genere las etiquetas para referencias a las figuras
-  % utilice identificadores que le ayuden a diferenciar figuras, tablas,
-  % y otras entidades (por ejemplo, fig:)
-  \label{fig:sim}
-\end{figure}
-
-\subsection{Diagrama de flujo}
-Tal como se especificaba en los requerimientos recibidos, y como podemos ver en la figura \ref{fig:sim2}, lo primero que hacemos es obetener los datos guardados en la base de datos y compararlos con las personas que están presentes, que son ingresadas por el usuario junto con el precio del café. Luego de esto, debemos calcular la diferencia de precio de los cafés tomados y los cafés comprados para cada uno de los usuarios y buscar el mayor de estos valores. En un principio este será nuestro elegido para ir a comprar y en caso de que este número se repita, se escoge uno de ellos al azar, siempre con las personas que están presentes. Para finalizar, se actualiza la base de datos y se muestra la eleción en pantalla.
-\begin{figure}[t]% prefiera la posición arriba (t) para las figuras
-  \centering
-  % incluya las figuras utilizando el comando de abajo
-  % note que la extensión es asumida pro latex,
-  % y que .pdf será asumido por pdflatex; o cualquier otra cosa
-  % declarada vía \DeclareGraphicsExtensions.
-  \includegraphics[width=0.8\linewidth]{AlgoritmoSelector}
-  %\rule{0.8\linewidth}{2cm}
-  \caption{Diagrama de flujo algoritmo selector.}
-  % genere las etiquetas para referencias a las figuras
-  % utilice identificadores que le ayuden a diferenciar figuras, tablas,
-  % y otras entidades (por ejemplo, fig:)
-  \label{fig:sim2}
-\end{figure}
-\subsection{Discusión}
-El principal punto en el que nos vimos estancados, fue en la definición de los requerimientos no funcionales, dado que en el documento recibido no estaban claros. La definicion de nuevos requerimientos nos trajo otro problema, la utilización de diferentes roles, como un administrador y usuarios. El problema al asignarle tareas únicas al administrador, era que existe la posibilidad de que el usuario asignado para este cargo no asista, dejando a sus colegas sin poder escoger a un comprador. Finalmente, y como se vió reflejado en el informe, solo definimos un tipo de rol.
-Otro de los puntos importantes fue la abstracción que debimos tomar a la hora de realizar los diferentes diagramas y evitar encasillarnos en un lenguaje específico.
 
 \section{Conclusión}
+
 
 
 
