@@ -5,3 +5,4 @@ from principal.models import Trabajador, Cafe
 class TrabajadorForm(ModelForm):
 	class Meta:
 		model = Trabajador
+	
