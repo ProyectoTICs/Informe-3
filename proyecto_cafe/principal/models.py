@@ -7,7 +7,7 @@ from datetime import date
 def validate_nombre(value):
     if len(value) < 3 :
         raise ValidationError('%s ->Nombre muy corto' % value)
-    if  re.search(r"[0-9]", value) >= 0:
+    if  re.search(r"[^a-zA-Z]", value) >= 0:
     	raise ValidationError('%s ->Se ingreso un caracter incorrecto' % value)
 class Trabajador(models.Model):
 	CafesComprados = models.IntegerField(null=True)
